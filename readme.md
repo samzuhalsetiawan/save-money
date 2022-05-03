@@ -26,7 +26,7 @@ Untuk memenuhi tugas 1 mata kuliah Pemrograman Web 1 dari Bpk. Fahmi selaku Dose
 <br />
 
 ## Installation
-1. Download source code dari web ini.
+1. Download [source code](https://codeload.github.com/samzuhalsetiawan/save-money/zip/refs/heads/main) dari web ini.
 2. Extrak ke folder htdocs xampp anda berada (ex: C:\xampp\htdocs)
 
 <br />
