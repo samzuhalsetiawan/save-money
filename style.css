@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;700&display=swap');
+:root {
+  --font-color-white1: #FDFDFD;
+  --background-color-navigation: #D8E9A8;
+  --background-color-button-navigation: #EEEEEE;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+}
+.main-container {
+  height: 100vh;
+  overflow: hidden;
+  /* border: 5px solid green; */
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+.main-content-container {
+  /* border: 1px solid red; */
+  background-image: url("./img/money.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 0px 4.5rem;
+  flex: 6;
+}
+.navigation-container {
+  /* border: 1px solid blue; */
+  background-color: var(--background-color-navigation);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 4;
+}
+
+.logo {
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 2.25rem;
+}
+.logo > h3 {
+  padding: 0px 1em;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--font-color-white1);
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--font-color-white1);
+  padding-top: 2rem;
+}
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--font-color-white1);
+  padding-top: 1.5rem;
+}
+
+.nav-grid {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(2, 10rem);
+  grid-template-rows: repeat(3, 10rem);
+  grid-template-areas: "home about" "pemasukan pengeluaran" "tabel tabel";
+  gap: 1.5rem;
+}
+.navigation-container button {
+  border: none;
+  outline: none;
+  background-color: var(--background-color-button-navigation);
+  border-radius: 20px;
+  border: 1px solid rgba(30, 81, 40, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+}
+.navigation-container button:hover {
+  cursor: pointer;
+}
