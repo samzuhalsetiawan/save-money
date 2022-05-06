@@ -45,3 +45,12 @@ function getTotalPengeluaran()
   }
   return array_reduce($filteredTransactions, 'sumPengeluaran', 0);
 }
+
+function deleteTransaction($index)
+{
+  $allTransactions = getAllTransactions();
+  array_splice($allTransactions, $index, 1);
+  $jsonData = json_encode($allTransactions);
+  file_put_contents("fakeDB/fakedb.json", $jsonData);
+  return true;
+}

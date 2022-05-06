@@ -273,3 +273,30 @@
 .table-container td.font-red {
   color: var(--button-color-red1);
 }
+.main-table tbody td.tombol-hapus,
+.main-table thead th:last-child {
+  width: 3px;
+}
+.main-table thead th:last-child {
+  padding-right: 2rem;
+}
+.main-table tbody td.tombol-hapus {
+  padding-right: 2.5rem;
+  font-size: 1.5rem;
+}
+.main-table tbody td.tombol-hapus a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--black1);
+}
+.main-table tbody td.tombol-hapus a:hover {
+  color: var(--button-color-red1);
+}
+
+.profile-pic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}

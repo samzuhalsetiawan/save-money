@@ -8,6 +8,14 @@ $totalSaldo = $totalPendapatan - $totalPengeluaran;
 $formatedPendapatan = number_format($totalPendapatan, 2, ',', '.');
 $formatedPengeluaran = number_format($totalPengeluaran, 2, ',', '.');
 $formatedSaldo = number_format($totalSaldo, 2, ',', '.');
+
+if (isset($_GET['action']) && $_GET['action'] == 'hapus') {
+  $isDeleted = deleteTransaction(intval($_GET['index']));
+  if ($isDeleted) {
+    header("Location: " . '?menu=tabel');
+  }
+}
+
 ?>
 
 <div class="table-container">
@@ -18,6 +26,7 @@ $formatedSaldo = number_format($totalSaldo, 2, ',', '.');
           <th>Waktu</th>
           <th>Transaksi</th>
           <th>Keterangan</th>
+          <th>Hapus</th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +42,7 @@ $formatedSaldo = number_format($totalSaldo, 2, ',', '.');
               <?= ($isPendapatan ? "+" : "-") . " Rp. " . number_format($transaksi['nominal'], 2, ',', '.'); ?>
             </td>
             <td><?= $transaksi['keterangan']; ?></td>
+            <td class="tombol-hapus"><a href="?menu=tabel&action=hapus&index=<?= $index; ?>">&times;</a></td>
           </tr>
         <?php endforeach ?>
       </tbody>
