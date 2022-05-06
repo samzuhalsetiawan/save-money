@@ -27,10 +27,13 @@ if (!isset($_GET["menu"])) $_GET["menu"] = "home";
         require_once "./layouts/about.html";
         break;
       case 'pendapatan':
-        require_once "./layouts/pendapatan.html";
+        require_once "./layouts/pendapatan.php";
         break;
       case 'pengeluaran':
-        require_once "./layouts/pengeluaran.html";
+        require_once "./layouts/pengeluaran.php";
+        break;
+      case 'tabel':
+        require_once "./layouts/tabel.php";
         break;
       default:
         require_once "./layouts/home.html";

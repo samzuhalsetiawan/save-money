@@ -6,6 +6,7 @@
   --background-color-button-navigation: #EEEEEE;
   --button-color-green1: #1E5128;
   --button-color-red1: #CE0303;
+  --black1: #333333;
 }
 * {
   margin: 0px;
@@ -220,4 +221,69 @@
   height: 150px;
   border-radius: 8px;
   background-color: var(--font-color-white2);
+}
+
+.table-container table {
+  /* border: 1px solid red; */
+  width: 100%;
+}
+.table-container td,
+.table-container th {
+  padding: 0.5rem 1rem;
+}
+.main-table,
+.tabel-total {
+  background-color: var(--background-color-button-navigation);
+  border-radius: 20px;
+}
+.main-table {
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* .main-table table, */
+/* table {
+  border: 1px solid blue;
+  width: 50vw;
+  /* width: calc(50vw + 16px); */
+  /* width: 716px; */
+  /* 140px * 5 column + 16px scrollbar width */
+  /* border-spacing: 0;
+} */
+
+.main-table tbody,
+.main-table thead tr {
+  display: block;
+}
+
+.main-table tbody {
+  height: calc(50vh - 1rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.main-table tbody td,
+.main-table thead th {
+  width: calc(50vw / 3);
+  /* width: 140px; */
+}
+
+.main-table thead th:last-child {
+  width: calc(calc(50vw / 3) + 16px);
+  /* width: 156px; */
+  /* 140px + 16px scrollbar width */
+}
+.main-table td {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--black1);
+}
+.tabel-total {
+  padding-left: 1rem;
+}
+.table-container td.font-green {
+  color: green;
+}
+.table-container td.font-red {
+  color: var(--button-color-red1);
 }
