@@ -2,6 +2,12 @@
 require_once "fakeDB/fakedb.php";
 $bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 $database = getAllTransactions();
+$totalPendapatan = getTotalPendapatan();
+$totalPengeluaran = getTotalPengeluaran();
+$totalSaldo = $totalPendapatan - $totalPengeluaran;
+$formatedPendapatan = number_format($totalPendapatan, 2, ',', '.');
+$formatedPengeluaran = number_format($totalPengeluaran, 2, ',', '.');
+$formatedSaldo = number_format($totalSaldo, 2, ',', '.');
 ?>
 
 <div class="table-container">
@@ -24,7 +30,7 @@ $database = getAllTransactions();
             ?>
             <td><?= implode(" ", $date); ?></td>
             <td class="<?= $isPendapatan ? "font-green" : "font-red"; ?>">
-              <?= ($isPendapatan ? "+" : "-") . " Rp. " . $transaksi['nominal']; ?>
+              <?= ($isPendapatan ? "+" : "-") . " Rp. " . number_format($transaksi['nominal'], 2, ',', '.'); ?>
             </td>
             <td><?= $transaksi['keterangan']; ?></td>
           </tr>
@@ -36,15 +42,15 @@ $database = getAllTransactions();
     <table>
       <tr>
         <td>Total Pendapatan</td>
-        <td>Rp. 23.000.000,00</td>
+        <td class="font-green">+ Rp. <?= $formatedPendapatan ?></td>
       </tr>
       <tr>
         <td>Total Pengeluaran</td>
-        <td>Rp. 23.000.000,00</td>
+        <td class="font-red">- Rp. <?= $formatedPengeluaran ?></td>
       </tr>
       <tr>
         <td>Total Saldo</td>
-        <td>Rp. 23.000.000,00</td>
+        <td>Rp. <?= $formatedSaldo ?></td>
       </tr>
     </table>
   </div>

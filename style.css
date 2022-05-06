@@ -224,7 +224,6 @@
 }
 
 .table-container table {
-  /* border: 1px solid red; */
   width: 100%;
 }
 .table-container td,
@@ -242,16 +241,6 @@
   padding-bottom: 1rem;
 }
 
-/* .main-table table, */
-/* table {
-  border: 1px solid blue;
-  width: 50vw;
-  /* width: calc(50vw + 16px); */
-  /* width: 716px; */
-  /* 140px * 5 column + 16px scrollbar width */
-  /* border-spacing: 0;
-} */
-
 .main-table tbody,
 .main-table thead tr {
   display: block;
@@ -266,13 +255,10 @@
 .main-table tbody td,
 .main-table thead th {
   width: calc(50vw / 3);
-  /* width: 140px; */
 }
 
 .main-table thead th:last-child {
   width: calc(calc(50vw / 3) + 16px);
-  /* width: 156px; */
-  /* 140px + 16px scrollbar width */
 }
 .main-table td {
   padding: 0.5rem 2rem;
