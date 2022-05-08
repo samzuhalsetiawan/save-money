@@ -54,3 +54,8 @@ function deleteTransaction($index)
   file_put_contents("fakeDB/fakedb.json", $jsonData);
   return true;
 }
+
+function cekBoros($limit)
+{
+  return getTotalPendapatan() * 50 / 100 <= getTotalPengeluaran();
+}

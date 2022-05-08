@@ -8,6 +8,13 @@ if (
   isset($_POST["time"])
 ) {
   addTransaction($_POST);
+  $isBoros = cekBoros(50);
+  if ($isBoros) { ?>
+    <script>
+      const dialogEl = document.getElementById("dialog-el");
+      dialogEl.showModal();
+    </script>
+<?php }
 }
 ?>
 <form action="" class="pendapatan-container" method="post">
