@@ -6,7 +6,7 @@ Sebuah website pencatat pengeluaran dan pemasukan agar dapat mengelola keuangan 
 <br />
 
 ## Latar Belakang Pembuatan
-Untuk memenuhi tugas 2 mata kuliah Pemrograman Web 1 dari Bpk. Fahmi selaku Dosen Pembimbing.
+Untuk memenuhi tugas 2 mata kuliah Pemrograman Web 1 dari Bpk. Fahmi Romisa selaku Dosen Pembimbing.
 
 <br />
 
