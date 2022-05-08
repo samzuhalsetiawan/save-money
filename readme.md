@@ -1,4 +1,4 @@
-# Save Money
+# Tabunganku
 *Catat pengeluaran dan pendapatanmu dengan lebih mudah!*
 
 Sebuah website pencatat pengeluaran dan pemasukan agar dapat mengelola keuangan dengan lebih mudah.
