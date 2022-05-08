@@ -17,33 +17,20 @@ function addTransaction($data)
 function getTotalPendapatan()
 {
   $allTransactions = getAllTransactions();
-  function filterPendapatan($val)
-  {
-    return $val['tipeTransaksi'] == 'pendapatan';
-  }
-  $filteredTransactions = array_filter($allTransactions, 'filterPendapatan');
-  function sumPendapatan($carry, $item)
-  {
-    $nominal = intval($item['nominal']);
-    return $carry + $nominal;
-  }
-  return array_reduce($filteredTransactions, 'sumPendapatan', 0);
+  $filteredTransactions = array_filter($allTransactions, fn ($val) => $val['tipeTransaksi'] == 'pendapatan');
+  return array_reduce($filteredTransactions, fn ($carry, $item) => $carry + intval($item['nominal']), 0);
 }
 
 function getTotalPengeluaran()
 {
   $allTransactions = getAllTransactions();
-  function filterPengeluaran($val)
-  {
-    return $val['tipeTransaksi'] == 'pengeluaran';
-  }
-  $filteredTransactions = array_filter($allTransactions, 'filterPengeluaran');
-  function sumPengeluaran($carry, $item)
-  {
-    $nominal = intval($item['nominal']);
-    return $carry + $nominal;
-  }
-  return array_reduce($filteredTransactions, 'sumPengeluaran', 0);
+  $filteredTransactions = array_filter($allTransactions, fn ($val) => $val['tipeTransaksi'] == 'pengeluaran');
+  return array_reduce($filteredTransactions, fn ($carry, $item) => $carry + intval($item['nominal']), 0);
+}
+
+function getTotalSaldo()
+{
+  return getTotalPendapatan() - getTotalPengeluaran();
 }
 
 function deleteTransaction($index)
@@ -57,5 +44,5 @@ function deleteTransaction($index)
 
 function cekBoros($limit)
 {
-  return getTotalPendapatan() * 50 / 100 <= getTotalPengeluaran();
+  return getTotalPendapatan() * $limit / 100 <= getTotalPengeluaran();
 }
